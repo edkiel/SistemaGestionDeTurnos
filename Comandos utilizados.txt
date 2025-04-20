@@ -1,0 +1,19 @@
+Comandos
+ utilizados
+
+
+git status
+
+git add . 
+
+git commit -m "comentario-de-mi-texto"
+
+git pull
+
+git branch
+
+git checkout main 
+
+git pull origin main
+
+git checkout -b nombre-de-la-nueva-rama
