@@ -17,3 +17,5 @@ git checkout main
 git pull origin main
 
 git checkout -b nombre-de-la-nueva-rama
+
+git push --set-upstream origin SGTv1
