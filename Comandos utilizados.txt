@@ -19,3 +19,47 @@ git pull origin main
 git checkout -b nombre-de-la-nueva-rama
 
 git push --set-upstream origin SGTv1
+
+
+
+*****************Clonar herramientas
+
+git clone http_elrepositoriodemiGitHub
+
+************Cambiar entre ramas
+
+git checkout nombre-de-la-rama
+
+
+
+********* enviar mi proyecto a github con git, ( con el git bash en la carpeta de mi proyecto)
+
+git init
+
+git add
+
+
+***************
+git remote add origin https://github.com/edkiel/myBiblioteca.git
+git branch -M main
+git push -u origin main
+
+git remote add origin <URL_DEL_REPOSITORIO_EN_GITHUB>
+
+
+
+****************
+echo "# myBiblioteca" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/edkiel/myBiblioteca.git
+git push -u origin main
+
+********************************************************************************
+
+Para fusionar una rama con la rama principal (main o master) en Git y GitHub, primero debes asegurarte de estar en la rama principal. Luego, utiliza el comando 
+git merge <nombre_de_la_rama_a_fusionar>
+git push
+
