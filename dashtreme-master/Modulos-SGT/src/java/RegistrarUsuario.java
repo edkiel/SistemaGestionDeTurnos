@@ -20,7 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/RegistrarUsuario"})
 public class RegistrarUsuario extends HttpServlet {
 
-    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -29,16 +28,21 @@ public class RegistrarUsuario extends HttpServlet {
         String Segundo_nombre = request.getParameter("Segundo_nombre");
         String Primer_apellido = request.getParameter("Primer_apellido");
         String Segundo_apellido = request.getParameter("Segundo_apellido");
-        String Rol = request.getParameter("Cargo");
+        String Rol = request.getParameter("Rol");
         String Correo = request.getParameter("Correo");
         String Contrasena = request.getParameter("Contrasena");
+        String terminos = request.getParameter("terminos");
+
+        if (terminos != null && terminos.equals("aceptado")) {
+        } else {
+        }
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/sgturnos", "root", "");
 
             PreparedStatement sentencia = conexion.prepareStatement("insert into usuario (Id_usuario, Primer_nombre, Segundo_nombre, Primer_apellido, Segundo_apellido, Rol, Correo,Contrasena) values(?,?,?,?,?,?,?,?)");
-            
+
             sentencia.setString(1, Id_usuario);
             sentencia.setString(2, Primer_nombre);
             sentencia.setString(3, Segundo_nombre);
@@ -48,7 +52,7 @@ public class RegistrarUsuario extends HttpServlet {
             sentencia.setString(7, Correo);
             sentencia.setString(8, Contrasena);
             sentencia.executeUpdate();
-            
+
             sentencia.close();
             conexion.close();
 
